@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# But keep only these files
+!.gitignore
+!init.el
