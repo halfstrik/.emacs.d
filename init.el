@@ -38,12 +38,16 @@
 ;; Backups
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
+;; Term
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
 
 ;; Ido mode
 (require 'ido)
 (ido-mode t)
+
+;; "Open with" in same frame
+(setq ns-pop-up-frames nil)
 
 (use-package magit
   :ensure t
