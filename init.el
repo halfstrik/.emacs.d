@@ -20,6 +20,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (tango-dark)))
+ '(ido-enable-flex-matching t)
  '(menu-bar-mode nil)
  '(package-selected-packages (quote (magit use-package)))
  '(tool-bar-mode nil))
@@ -39,6 +40,10 @@
 
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
+
+;; Ido mode
+(require 'ido)
+(ido-mode t)
 
 (use-package magit
   :ensure t
