@@ -31,6 +31,12 @@
  ;; If there is more than one, they won't work right.
  '(term-color-blue ((t (:background "blue2" :foreground "dark cyan")))))
 
+;; Tabs
+(setq-default tab-width 4)
+
+;; Backups
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
 
