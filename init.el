@@ -4,13 +4,6 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-(require 'package)
-(add-to-list 'package-archives
-    '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
-(unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -19,10 +12,18 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(custom-enabled-themes (quote (tango-dark)))
  '(ido-enable-flex-matching t)
  '(menu-bar-mode nil)
- '(package-selected-packages (quote (magit use-package)))
+ '(ns-pop-up-frames nil)
+ '(package-archives
+   (quote
+	(("gnu" . "https://elpa.gnu.org/packages/")
+	 ("melpa-stable" . "http://stable.melpa.org/packages/"))))
+ '(package-selected-packages
+   (quote (magit)))
+ '(tab-width 4)
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -32,12 +33,6 @@
  ;; If there is more than one, they won't work right.
  '(term-color-blue ((t (:background "blue2" :foreground "dark cyan")))))
 
-;; Tabs
-(setq-default tab-width 4)
-
-;; Backups
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
-
 ;; Term
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
@@ -46,9 +41,5 @@
 (require 'ido)
 (ido-mode t)
 
-;; "Open with" in same frame
-(setq ns-pop-up-frames nil)
-
-(use-package magit
-  :ensure t
-  :bind (("C-c g" . magit-status)))
+;; Magit
+(global-set-key (kbd "C-c g") 'magit-status)
