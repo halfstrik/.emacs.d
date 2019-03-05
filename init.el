@@ -15,7 +15,6 @@
  '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(custom-enabled-themes (quote (tango-dark)))
  '(ido-enable-flex-matching t)
- '(menu-bar-mode nil)
  '(ns-pop-up-frames nil)
  '(package-archives
    (quote
@@ -23,6 +22,7 @@
 	 ("melpa-stable" . "http://stable.melpa.org/packages/"))))
  '(package-selected-packages
    (quote (magit)))
+ '(scroll-bar-mode (quote right))
  '(tab-width 4)
  '(tool-bar-mode nil))
 
