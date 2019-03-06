@@ -20,8 +20,7 @@
    (quote
 	(("gnu" . "https://elpa.gnu.org/packages/")
 	 ("melpa-stable" . "http://stable.melpa.org/packages/"))))
- '(package-selected-packages
-   (quote (magit)))
+ '(package-selected-packages (quote (projectile magit)))
  '(scroll-bar-mode (quote right))
  '(tab-width 4)
  '(tool-bar-mode nil))
@@ -43,3 +42,9 @@
 
 ;; Magit
 (global-set-key (kbd "C-c g") 'magit-status)
+
+;; Projectile
+(require 'projectile)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)
