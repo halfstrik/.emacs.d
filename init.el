@@ -39,11 +39,7 @@
 
 ;; Term
 (use-package term
-  :bind ("C-c C-y" . term-paste)
-  ;;:config
-  ;;(custom-set-variables
-  ;;   '(term-color-blue ((t (:background "blue2" :foreground "dark cyan")))))
-  )
+  :bind ("C-c C-y" . term-paste))
 
 ;; Ido mode
 (use-package ido
