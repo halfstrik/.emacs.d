@@ -61,7 +61,16 @@
   (projectile-mode t))
 
 ;; Flycheck
-(use-package flycheck)
+(use-package flycheck
+  :init
+  (global-flycheck-mode)
+  (setq-default flycheck-disabled-checkers '(c/c++-clang)))
+
+;;; Environment fixup
+(use-package exec-path-from-shell
+  :if (and (eq system-type 'darwin) (display-graphic-p))
+  :config
+  (exec-path-from-shell-initialize))
 
 ;;; init.el ends here
 
