@@ -9,7 +9,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(rtags company exec-path-from-shell flycheck projectile magit auto-package-update use-package)))
+	(anaconda-mode company-anaconda rtags company exec-path-from-shell flycheck projectile magit auto-package-update use-package)))
  '(safe-local-variable-values
    (quote
 	((eval setq flycheck-gcc-include-path

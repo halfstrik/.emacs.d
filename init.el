@@ -73,10 +73,20 @@
 ;; RTags - C/C++
 (use-package rtags)
 
-;; Company - autocomplition
-(use-package company)
+(use-package anaconda-mode
+  :init
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'eldoc-mode))
 
-;; TODO: Python - anaconda-mode + company-anaconda
+;; Company - autocomplition
+(use-package company
+  :init
+  (global-company-mode))
+
+;; Python - anaconda-mode + company-anaconda
+(use-package company-anaconda
+  :config
+  (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
 ;;; init.el ends here
 
