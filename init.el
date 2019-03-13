@@ -7,7 +7,6 @@
    (when (file-exists-p custom-file)
      (load custom-file))
 
-;; Theme
 (load-theme 'tango-dark t)
 ;; Backup directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
@@ -39,38 +38,45 @@
   (setq auto-package-update-delete-old-versions t)
   (auto-package-update-maybe))
 
-;; Term
 (use-package term
   :bind ("C-c C-y" . term-paste))
 
-;; Ido mode
+;; Ido - narrowing framework
 (use-package ido
   :config
   (setq ido-enable-flex-matching t)
   (ido-mode t))
 
-;; Magit
+;; Magit - git integration
 (use-package magit
   :bind ("C-c g" . magit-status))
 
-;; Projectile
+;; Projectile - projects aware tools
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
 				("C-c p" . projectile-command-map))
   :config
   (projectile-mode t))
 
-;; Flycheck
+;; Flycheck - statick code analysis
 (use-package flycheck
   :init
   (global-flycheck-mode)
   (setq-default flycheck-disabled-checkers '(c/c++-clang)))
 
-;;; Environment fixup
+;; Environment fixup on MacOS
 (use-package exec-path-from-shell
   :if (and (eq system-type 'darwin) (display-graphic-p))
   :config
   (exec-path-from-shell-initialize))
+
+;; RTags - C/C++
+(use-package rtags)
+
+;; Company - autocomplition
+(use-package company)
+
+;; TODO: Python - anaconda-mode + company-anaconda
 
 ;;; init.el ends here
 
