@@ -70,23 +70,33 @@
   :config
   (exec-path-from-shell-initialize))
 
-;; RTags - C/C++
-(use-package rtags)
-
-(use-package anaconda-mode
-  :init
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'eldoc-mode))
-
 ;; Company - autocomplition
 (use-package company
   :init
   (global-company-mode))
+
+;; Python
+(use-package anaconda-mode
+  :init
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'eldoc-mode))
 
 ;; Python - anaconda-mode + company-anaconda
 (use-package company-anaconda
   :config
   (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
-;;; init.el ends here
+;; RTags - C/C++
+(use-package rtags
+  :load-path "~/.emacs.d/site-lisp/rtags/"
+  :init
+  (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+  (add-hook 'c++-mode-hook 'rtags-start-process-unless-running))
 
+;; C/C++ company-rtags
+(use-package company-rtags
+  :load-path "~/.emacs.d/site-lisp/rtags/"
+  :config
+  (add-to-list 'company-backend 'company-rtags))
+
+;;; init.el ends here
