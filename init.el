@@ -86,6 +86,9 @@
   :config
   (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
+;; Python virtualenv manager - venvs located ~/.virtualenvs/ by default
+(use-package virtualenvwrapper)
+
 ;; RTags - C/C++
 (use-package rtags
   :load-path "~/.emacs.d/site-lisp/rtags/"
