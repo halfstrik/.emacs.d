@@ -15,6 +15,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode 'right)
 (setq-default tab-width 4)
+(setq column-number-mode t)
 
 ;; Package
 (require 'package)
@@ -46,6 +47,10 @@
   :config
   (setq ido-enable-flex-matching t)
   (ido-mode t))
+
+;; Helm
+(use-package helm
+  :bind ("M-x" . helm-M-x))
 
 ;; Magit - git integration
 (use-package magit
