@@ -95,16 +95,16 @@
 (use-package virtualenvwrapper)
 
 ;; RTags - C/C++
-(use-package rtags
-  :load-path "~/.emacs.d/site-lisp/rtags/"
-  :init
-  (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
-  (add-hook 'c++-mode-hook 'rtags-start-process-unless-running))
+;;(use-package rtags
+;;  :load-path "~/.emacs.d/site-lisp/rtags/"
+;;  :init
+;;  (add-hook 'c-mode-hook 'rtags-start-process-unless-running)
+;;  (add-hook 'c++-mode-hook 'rtags-start-process-unless-running))
 
 ;; C/C++ company-rtags
-(use-package company-rtags
-  :load-path "~/.emacs.d/site-lisp/rtags/"
-  :config
-  (add-to-list 'company-backend 'company-rtags))
+;;(use-package company-rtags
+;;  :load-path "~/.emacs.d/site-lisp/rtags/"
+;;  :config
+;;  (add-to-list 'company-backend 'company-rtags))
 
 ;;; init.el ends here
