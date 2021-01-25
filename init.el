@@ -7,7 +7,7 @@
    (when (file-exists-p custom-file)
      (load custom-file))
 
-(load-theme 'tango-dark t)
+;;(load-theme 'tango-dark t)
 ;; Backup directory
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 ;; Window & Frames
@@ -22,7 +22,7 @@
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(package-initialize)
+;;(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -59,15 +59,15 @@
 ;; Projectile - projects aware tools
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
-				("C-c p" . projectile-command-map))
+                ("C-c p" . projectile-command-map))
   :config
   (projectile-mode t))
 
 ;; Flycheck - statick code analysis
-(use-package flycheck
-  :init
-  (global-flycheck-mode)
-  (setq-default flycheck-disabled-checkers '(c/c++-clang)))
+;;(use-package flycheck
+;;  :init
+;;  (global-flycheck-mode)
+;;  (setq-default flycheck-disabled-checkers '(c/c++-clang)))
 
 ;; Environment fixup on MacOS
 (use-package exec-path-from-shell
@@ -76,23 +76,23 @@
   (exec-path-from-shell-initialize))
 
 ;; Company - autocomplition
-(use-package company
-  :init
-  (global-company-mode))
+;;(use-package company
+;;  :init
+;;  (global-company-mode))
 
 ;; Python
-(use-package anaconda-mode
-  :init
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'eldoc-mode))
+;;(use-package anaconda-mode
+;;  :init
+;;  (add-hook 'python-mode-hook 'anaconda-mode)
+;;  (add-hook 'python-mode-hook 'eldoc-mode))
 
 ;; Python - anaconda-mode + company-anaconda
-(use-package company-anaconda
-  :config
-  (add-to-list 'company-backends '(company-anaconda :with company-capf)))
+;;(use-package company-anaconda
+;;  :config
+;;  (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
 ;; Python virtualenv manager - venvs located ~/.virtualenvs/ by default
-(use-package virtualenvwrapper)
+;;(use-package virtualenvwrapper)
 
 ;; RTags - C/C++
 ;;(use-package rtags
